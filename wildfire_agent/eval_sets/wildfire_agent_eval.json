@@ -1,0 +1,25 @@
+{
+  "name": "wildfire_agent_basic_eval",
+  "description": "Basic evals for wildfire cost summary, trend comparison, and tool usage.",
+  "app_name": "wildfire_agent",
+  "tests": [
+    {
+      "id": "summary_2024_costs",
+      "description": "Check that the agent aggregates 2024 wildfire costs and returns a table + insights.",
+      "input": "Give me a wildfire cost summary for 2024.",
+      "expected_behavior": "Agent loads mock data, aggregates costs by region and category, and returns a clear table with key insights."
+    },
+    {
+      "id": "summary_with_trends",
+      "description": "Check that the agent uses Google Search tool to compare costs with real-world trends.",
+      "input": "Give me a wildfire cost summary for 2024 and compare with recent real-world wildfire cost trends.",
+      "expected_behavior": "Agent summarizes 2024 synthetic costs, then calls google_search tool and explains high-level cost trends (e.g. climate change, billion-dollar disasters)."
+    },
+    {
+      "id": "explain_aircraft_costs",
+      "description": "Check that the agent can explain why aircraft is the dominant cost driver.",
+      "input": "Why are aircraft costs so high in this 2024 wildfire cost data?",
+      "expected_behavior": "Agent reasons about aircraft usage (long distances, flight hours, fuel, high hourly rates) based on aggregated data."
+    }
+  ]
+}
